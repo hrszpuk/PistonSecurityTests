@@ -1,4 +1,10 @@
 # Piston Security Tests
+This repository is dedicated to testing the security claims that [Piston]() makes.
+These tests assume you have a local piston api instance running on `localhost:2000`.
+
+To start the tests, run the `run.py` file.
+Each Python file with the prefix `test_` will be read, and fed into piston.
+The results of the test will be displayed on the command line.
 
 ### Tests
 We test each of Piston's security claims:
