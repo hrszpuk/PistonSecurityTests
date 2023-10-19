@@ -1,3 +1,2 @@
 
-def test_network():
-    assert True
+print("hello world")
