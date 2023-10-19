@@ -31,7 +31,7 @@ for runtime in test_response.json():
 
 data = {'language': 'py', 'version': '3.10.0', 'files': [{}]}
 
-# Opening file contents and building request
+# Opening file contents, sending request, and outputting result
 for filename in files:
     with open(filename, 'r') as file:
         contents = file.read()
@@ -43,5 +43,3 @@ for filename in files:
             print(f"Finished: {response.json()['run']}")
         except KeyError as e:
             print(f"Run failed: {response.json}")
-
-# Sending request to Piston API and displaying the result
