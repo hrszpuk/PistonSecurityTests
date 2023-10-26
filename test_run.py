@@ -13,7 +13,10 @@ class PistonSecurityTests(unittest.TestCase):
         self.assertEqual("SIGKILL", json["run"]["signal"])
 
     def test_max_processes(self):
-        pass
+        setup_data_copy("test_code/processes.py")
+        response = requests.post(PISTON_URL, json=data, headers=HEADERS)
+        json = response.json()
+        self.assertEqual("SIGKILL", json["run"]["signal"])
 
     def test_max_files(self):
         setup_data_copy("test_code/files.py")
