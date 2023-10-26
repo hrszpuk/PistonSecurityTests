@@ -13,7 +13,10 @@ class PistonSecurityTests(unittest.TestCase):
         pass
 
     def test_max_files(self):
-        pass
+        setup_data_copy("test_code/files.py")
+        response = requests.post(PISTON_URL, json=data, headers=HEADERS)
+        json = response.json()
+        self.assertEqual("SIGKILL", json["run"]["signal"])
 
     # Code should timeout after 3 seconds (unless maximum execution time is modified)
     def test_code_execution_timeout(self):
