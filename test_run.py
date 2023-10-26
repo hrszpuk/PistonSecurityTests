@@ -7,7 +7,10 @@ class PistonSecurityTests(unittest.TestCase):
 
     #
     def test_outgoing_network_connections(self):
-        pass
+        setup_data_copy("test_code/network.py")
+        response = requests.post(PISTON_URL, json=data, headers=HEADERS)
+        json = response.json()
+        self.assertEqual("SIGKILL", json["run"]["signal"])
 
     def test_max_processes(self):
         pass
