@@ -1,4 +1,4 @@
-PISTON_URL = "http://localhost:2000"
+PISTON_URL = "http://localhost:2000/api/v2/execute"  # "https://emkc.org/api/v2/piston/execute"
 HEADERS = {"Content-Type": "application/json"}
 
 data = {
